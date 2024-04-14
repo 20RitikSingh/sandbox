@@ -3,7 +3,10 @@
 {
 	"name": "Go",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm"
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+	"runArgs": ["--init", "--privileged"],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+	"overrideCommand": false
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
